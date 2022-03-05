@@ -1,3 +1,20 @@
-# Microserviços com node.js e typescript
+# Microserviço de autenticação com Nodejs
 
-Desenvolvimento de uma api básica com node e express. Apenas conceitos básicos com o propósito de estudar.
+Neste projeto foi criado um **microserviço de autenticação** para fins de estudo e por curiosidade em conhecer um pouco melhor como funciona um banco de dados e também sobre seu desenvolvimento.
+
+## Composição do projeto
+
+### Usuários
+
+- GET /users
+- GET /users/:uuid
+- POST /users
+- PUT /users/:uuid
+- DELETE /users/:uuid
+
+### Autenticação
+
+- POST /token
+- POST /token/validate
+
+
