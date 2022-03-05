@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
 import ForbiddenError from "../Models/errors/forbidden-error.model";
-import userRepository from "../repositorios/user.repository";
 import JWT from "jsonwebtoken";
 import basicAuthenticationMidleware from "../middlewares/basic.authentication.middleware";
 
