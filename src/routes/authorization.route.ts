@@ -18,7 +18,7 @@ authorizationRoute.post(
       }
       const jwtPayload = { username: user.username };
       const jwtSecretKey = "my_secret_key";
-      const jwtOptions = { subject: user?.uuid };
+      const jwtOptions = { subject: user?.uuid, expiresIn: "10m" };
 
       const jwt = JWT.sign(jwtPayload, jwtSecretKey, jwtOptions);
       resp.status(200).send(jwt).json({ token: jwt });
