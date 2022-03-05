@@ -36,7 +36,7 @@ usersRoute.post(
     const newUser = req.body;
     const uuid = await userRepository.create(newUser);
 
-    resp.status(205).send(uuid);
+    resp.status(201).send(uuid);
   }
 );
 

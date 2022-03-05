@@ -8,4 +8,3 @@ CREATE TABLE IF NOT EXISTS application_user(
   PRIMARY KEY (uuid)
 )
 
--- INSERT INTO application_user (username, password) VALUES ('gustavo',crypt('admin', 'my_salt') )
