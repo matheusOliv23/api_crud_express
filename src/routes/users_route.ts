@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response, Router } from "express";
+import bearerAuthentication from "../middlewares/jwt-authentication.middleware";
 import userRepository from "../repositorios/user.repository";
-
 
 const usersRoute = Router();
 
 usersRoute.get(
   "/users",
+
   async (req: Request, resp: Response, next: NextFunction) => {
     const users = await userRepository.findAllUsers();
     resp.status(200).json(users);
@@ -31,6 +32,7 @@ usersRoute.get(
 
 usersRoute.post(
   "/users",
+
   async (req: Request, resp: Response, next: NextFunction) => {
     const newUser = req.body;
     const uuid = await userRepository.create(newUser);

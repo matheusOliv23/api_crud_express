@@ -26,12 +26,18 @@ async function bearerAuthentication(
       throw new ForbiddenError("Token inválido");
     }
 
-    const user = {
-      uuid: tokenPayload.sub,
-      username: tokenPayload.username,
-    };
-    req.user = user;
-    next();
+    try {
+      const user = {
+        uuid: tokenPayload.sub,
+        username: tokenPayload.username,
+      };
+      req.user = user;
+      next();
+    } catch (error) {
+      throw new ForbiddenError("Token inválido");
+    }
+
+   
   } catch (error) {
     next(error);
   }

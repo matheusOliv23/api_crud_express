@@ -15,8 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 //Configuração de rotas
 // app.use(usersRoute);
 app.use(statusRoute);
-app.use(bearerAuthentication, usersRoute);
 app.use(authorizationRoute);
+app.use(bearerAuthentication);
+app.use(usersRoute);
 // app.use(basicAuthenticationMidleware);
 
 
