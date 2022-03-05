@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
 import userRepository from "../repositorios/user.repository";
-import StatusCodes from "http-status-code";
-import DatabaseError from "../Models/errors/database.error";
+
 
 const usersRoute = Router();
 
@@ -35,7 +34,6 @@ usersRoute.post(
   async (req: Request, resp: Response, next: NextFunction) => {
     const newUser = req.body;
     const uuid = await userRepository.create(newUser);
-
     resp.status(201).send(uuid);
   }
 );

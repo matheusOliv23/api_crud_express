@@ -82,7 +82,7 @@ class UserRepository {
 
       return user || null;
     } catch (error) {
-      throw new DatabaseError("Erro na consulta por usuario e senha.");
+      throw new DatabaseError("Erro na consulta por usuario e senha.", error);
     }
   }
 
